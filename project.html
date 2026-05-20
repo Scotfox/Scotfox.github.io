@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Модель | My Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Оновлене підключення шрифтів: додано Space Mono -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="project-page">
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="btn-main">← Назад на головну</a>
+        <div class="logo">3D Preview</div>
+        <button id="theme-toggle" class="btn-main">Змінити тему</button>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <h1>Інтерактивна 3D Модель</h1>
+        <div class="iframe-container">
+          <iframe
+            title="3D Model"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            src="https://sketchfab.com/models/8e2be4f8958246aea77c868b42bdde6b/embed"
+          ></iframe>
+        </div>
+        <p class="description">
+          Це приклад вбудованої моделі за допомогою iFrame. Ви можете керувати
+          нею мишкою.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+    <footer>
+      <p>© 2026 Сергій Пшеничко. Всі права захищені.</p>
+    </footer>
+  </body>
+</html>

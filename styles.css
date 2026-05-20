@@ -1,0 +1,405 @@
+/* --- Глобальні налаштування --- */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(180deg, #a29bfe 0%, #6c5ce7 50%, #4834d4 100%);
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* --- Навігація --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* --- Картки --- */
+.card {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  scroll-margin-top: 100px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease;
+}
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Слайдер семестрів --- */
+.semester-slider {
+  position: relative;
+  min-height: 480px;
+  margin-bottom: 20px;
+}
+.semester-card {
+  display: none;
+  animation: slideFade 0.5s ease;
+}
+.semester-card.active {
+  display: block;
+}
+.sem-title {
+  text-align: center;
+  color: #00d2ff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+body.dark-theme .sem-title {
+  color: #fff;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- СТІЛЬ КАРТОК ФІЛЬМІВ --- */
+.section-desc {
+  margin-bottom: 25px;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.movie-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00d2ff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: #00d2ff;
+}
+
+.movie-info p {
+  font-size: 0.85rem;
+  margin: 0 0 15px 0;
+  flex-grow: 1;
+  opacity: 0.8;
+}
+
+.movie-link {
+  align-self: flex-start;
+  padding: 6px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00d2ff;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.movie-link:hover {
+  background: #00d2ff;
+  color: #000;
+}
+
+/* Налаштування для темної теми */
+body.dark-theme .movie-card {
+  border-color: #fff;
+}
+
+body.dark-theme .movie-info h3 {
+  color: #fff;
+}
+
+body.dark-theme .movie-link {
+  border-color: #fff;
+}
+
+body.dark-theme .movie-link:hover {
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .movies-grid {
+    grid-template-columns: 1fr; /* Одна колонка на мобільних */
+  }
+}
+
+/* --- Таблиці --- */
+.table-container {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+th,
+td {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+th {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Кнопки --- */
+.btn,
+.btn-main {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.btn-main {
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+  border-color: #00d2ff;
+}
+.btn-main:hover {
+  box-shadow: 0 0 25px rgba(0, 210, 255, 1);
+  background: #00d2ff;
+  color: #000;
+}
+
+/* --- Темна тема --- */
+body.dark-theme {
+  background: #000;
+  color: #fff;
+  font-family: "Space Mono", monospace;
+}
+body.dark-theme .card {
+  background: transparent;
+  border: 2px solid #fff;
+}
+body.dark-theme .btn-main {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  border-color: #fff;
+}
+body.dark-theme .btn-main:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* --- Решта стилів (місто, настрій, слайдер фото) --- */
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+.mood-item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.slides {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.slide.active {
+  display: block;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.movie-list a {
+  color: #00d2ff;
+  text-decoration: none;
+  border-bottom: 1px dashed #00d2ff;
+}
+body.dark-theme .movie-list a {
+  color: #fff;
+  border-color: #fff;
+}
+.city-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .city-info {
+    grid-template-columns: 1fr;
+  }
+  .semester-slider {
+    min-height: 600px;
+  }
+  table {
+    font-size: 0.75rem;
+  }
+}
+
+/* --- Фікс для 3D Моделі --- */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Співвідношення сторін 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 15px;
+}
+
+/* Якщо на екрані дуже мало місця (мобільні) */
+@media (max-width: 600px) {
+  .iframe-container {
+    padding-bottom: 75%; /* Робимо трохи вищою на телефонах */
+  }
+}
+
+/* --- Футер --- */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  /* Для світлої теми: напівпрозорий чорний, що на фоні фіолетового градієнта 
+     дасть ефект "темно-фіолетового" */
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Футер для ТЕМНОЇ теми */
+body.dark-theme footer {
+  background: #222; /* Темно-сірий колір */
+  color: #888; /* Світло-сірий текст */
+  border-top: 1px solid #444;
+}
+
+/* Додамо ефект при наведенні на текст футера */
+footer p:hover {
+  color: #fff;
+  transition: 0.3s;
+}
