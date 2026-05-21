@@ -371,9 +371,43 @@ body.dark-theme .movie-list a {
 }
 
 /* Якщо на екрані дуже мало місця (мобільні) */
-@media (max-width: 600px) {
-  .iframe-container {
-    padding-bottom: 75%; /* Робимо трохи вищою на телефонах */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Логотип зверху, кнопки знизу */
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    flex-wrap: wrap; /* Якщо кнопок багато, вони перейдуть на новий рядок */
+    justify-content: center;
+  }
+
+  .nav-links a {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .card {
+    margin: 20px 10px; /* Зменшуємо відступи по краях екрану */
+    padding: 20px 15px;
+  }
+
+  .city-info {
+    grid-template-columns: 1fr; /* Текст і карта стають один під одним */
+    gap: 20px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
   }
 }
 
