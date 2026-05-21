@@ -110,7 +110,7 @@ body.dark-theme .sem-title {
   }
 }
 
-/* --- СТІЛЬ КАРТОК ФІЛЬМІВ --- */
+/* --- СТИЛЬ КАРТОК ФІЛЬМІВ --- */
 .section-desc {
   margin-bottom: 25px;
   opacity: 0.9;
@@ -206,7 +206,7 @@ body.dark-theme .movie-link:hover {
 
 @media (max-width: 600px) {
   .movies-grid {
-    grid-template-columns: 1fr; /* Одна колонка на мобільних */
+    grid-template-columns: 1fr; 
   }
 }
 
@@ -348,11 +348,10 @@ body.dark-theme .movie-list a {
   }
 }
 
-/* --- Фікс для 3D Моделі --- */
 .iframe-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* Співвідношення сторін 16:9 */
+  padding-bottom: 56.25%; 
   height: 0;
   overflow: hidden;
   border-radius: 15px;
@@ -370,7 +369,6 @@ body.dark-theme .movie-list a {
   border-radius: 15px;
 }
 
-/* Якщо на екрані дуже мало місця (мобільні) */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column; /* Логотип зверху, кнопки знизу */
@@ -380,7 +378,7 @@ body.dark-theme .movie-list a {
 
   .nav-links {
     gap: 10px;
-    flex-wrap: wrap; /* Якщо кнопок багато, вони перейдуть на новий рядок */
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -416,8 +414,6 @@ footer {
   text-align: center;
   padding: 40px 20px;
   margin-top: 60px;
-  /* Для світлої теми: напівпрозорий чорний, що на фоні фіолетового градієнта 
-     дасть ефект "темно-фіолетового" */
   background: rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
@@ -425,14 +421,12 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Футер для ТЕМНОЇ теми */
 body.dark-theme footer {
-  background: #222; /* Темно-сірий колір */
-  color: #888; /* Світло-сірий текст */
+  background: #222; 
+  color: #888; 
   border-top: 1px solid #444;
 }
 
-/* Додамо ефект при наведенні на текст футера */
 footer p:hover {
   color: #fff;
   transition: 0.3s;
